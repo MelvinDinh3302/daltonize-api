@@ -24,9 +24,19 @@ Python 3.x
 3. **Send a request using curl**  
    Use the following command to send an image to the API and receive the daltonized version:
    ```bash
-   curl -X POST -F "image=@<input>" http://<your_host_ip>:5000/daltonize --output <output>
+   curl -X POST -F "image=@<input>" -F "type=<type>" http://<your_host_ip>:5000/daltonize --output <output>
    ```
+   **Note:** `-F "type=<type>"` is optional. Default = `'d'` for deuteranopia, `'p'` for protanopia, `'t'` for tritanopia.
+
    **Example:**
    ```bash
-   curl -X POST -F "image=@flower.jpg" http://127.0.0.1:5000/daltonize --output result.jpg
+   curl -X POST -F "image=@flower.jpg" -F "type=p" http://127.0.0.1:5000/daltonize --output result.jpg
    ```
+
+## Demonstration
+Ishihara's Colorblind Test (Protanopia/Red-blind)
+
+| Vision Type       | Original Image               | Daltonized Image               |
+|-------------------|------------------------------|--------------------------------|
+| **Normal Vision** | ![Original](test/ishihara.jpg) | ![Daltonized](test/ishihara-dal.jpg) |
+| **Simulated CVD** | ![Simulated](test/ishihara-sim.jpg) | ![Daltonized-Sim](test/ishihara-dal-sim.jpg) |

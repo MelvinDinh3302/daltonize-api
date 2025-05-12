@@ -11,12 +11,16 @@ def handle_image():
     if 'image' not in request.files:
         return {"error": "No image uploaded"}, 400
     
+    dalton_type = request.form.get('type', 'd').lower()
+    if dalton_type not in ['p', 'd', 't']:
+        return {"error": "Invalid type. Use 'p', 'd', or 't'."}, 400
+
     image_file = request.files['image']
     img = Image.open(image_file.stream).convert("RGB")
     img_np = np.asarray(img, dtype=np.float16)
     img_np = gamma_correction(img_np)
 
-    dalton_rgb = daltonize(img_np, 'd')
+    dalton_rgb = daltonize(img_np, dalton_type)
     dalton_img = array_to_img(dalton_rgb)
 
     img_io = io.BytesIO()
@@ -26,4 +30,4 @@ def handle_image():
     return send_file(img_io, mimetype='image/jpeg')
 
 if __name__ == '__main__':
-    app.run(debug=True) 
+    app.run(debug=True)
