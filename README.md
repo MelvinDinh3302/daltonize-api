@@ -2,10 +2,11 @@
 
 This **Daltonize API** processes images to generate colorblind-friendly versions. It takes an input image and returns a modified image that are more visible for colorblind viewers. This API was made to serve as the backend for a future React Native front-end app.
 
-## Run It on Your Own Machine
+## Run It on Your Local Machine
 
 ### Requirements
-Python 3.x
+- Python 3.x
+- curl
 
 ### Installation & Usage
 
@@ -32,6 +33,19 @@ Python 3.x
    ```bash
    curl -X POST -F "image=@flower.jpg" -F "type=p" http://127.0.0.1:5000/daltonize --output result.jpg
    ```
+
+## Run It Online (Recommended)
+
+### Requirements
+- curl
+
+### Usage
+Simply replace the local endpoint `http://<your_host_ip>:5000/daltonize` with the hosted API URL `https://daltonize-api.up.railway.app/daltonize`
+
+**Example**
+```bash
+curl -X POST -F "image=@flower.jpg" -F "type=p" https://daltonize-api.up.railway.app/daltonize --output result.jpg
+```
 
 ## Demonstration
 Ishihara Test (Protanopia/Red-blind)
