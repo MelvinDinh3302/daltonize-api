@@ -1,6 +1,6 @@
 # Daltonize API
 
-This **Daltonize API** processes images to generate colorblind-friendly versions. It takes an input image and returns a modified image that are more visible for colorblind viewers. This API is made to serve as the backend for a future React Native front-end app.
+This **Daltonize API** processes images to generate colorblind-friendly versions. It takes an input image and returns a modified image that are more visible for colorblind viewers. This API was made to serve as the backend for a future React Native front-end app.
 
 ## Run It on Your Own Machine
 
