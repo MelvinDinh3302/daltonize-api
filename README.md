@@ -34,9 +34,19 @@ Python 3.x
    ```
 
 ## Demonstration
-Ishihara's Colorblind Test (Protanopia/Red-blind)
+Ishihara Test (Protanopia/Red-blind)
 
 | Vision Type       | Original Image               | Daltonized Image               |
 |-------------------|------------------------------|--------------------------------|
 | **Normal Vision** | ![Original](test/ishihara.jpg) | ![Daltonized](test/ishihara-dal.jpg) |
-| **Simulated CVD** | ![Simulated](test/ishihara-sim.jpg) | ![Daltonized-Sim](test/ishihara-dal-sim.jpg) |
+| **Colorblind Vision** | ![Simulated](test/ishihara-sim.jpg) | ![Daltonized-Sim](test/ishihara-dal-sim.jpg) |
+
+Flower (Deuteranopia/Green-blind)
+
+| Vision Type       | Original Image               | Daltonized Image               |
+|-------------------|------------------------------|--------------------------------|
+| **Normal Vision** | ![Original](test/flower.jpg) | ![Daltonized](test/flower-dal.jpg) |
+| **Colorblind Vision** | ![Simulated](test/flower-sim.jpg) | ![Daltonized-Sim](test/flower-dal-sim.jpg) |
+
+## License
+This API was built upon [Joerg Dietrich's original Daltonize library](https://github.com/joergdietrich/daltonize).
