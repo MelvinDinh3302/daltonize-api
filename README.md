@@ -1,6 +1,6 @@
 # Daltonize API
 
-This **Daltonize API** processes images to generate colorblind-friendly versions. It takes an input image and returns a modified image that are more visible for colorblind viewers. This API was made to serve as the backend for [a future React Native front-end app](https://github.com/MelvinDinh3302/seecolors).
+This **Daltonize API** processes images to generate colorblind-friendly versions. It takes an input image and returns a modified image that are more visible for colorblind viewers. This API was made to serve as the backend for [See Colors](https://github.com/MelvinDinh3302/seecolors), my React Native front-end app, but it is open for anyone to use.
 
 ## Run It on Your Local Machine
 
@@ -62,5 +62,5 @@ Flower (Deuteranopia/Green-blind)
 | **Normal Vision** | ![Original](test/flower.jpg) | ![Daltonized](test/flower-dal.jpg) |
 | **Colorblind Vision** | ![Simulated](test/flower-sim.jpg) | ![Daltonized-Sim](test/flower-dal-sim.jpg) |
 
-## License
+## Acknowledgments
 This API was built upon [Joerg Dietrich's original Daltonize library](https://github.com/joergdietrich/daltonize).
