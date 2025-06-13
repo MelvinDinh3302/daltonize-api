@@ -1,6 +1,9 @@
 # Daltonize API
 
-This **Daltonize API** processes images to generate colorblind-friendly versions. It takes an input image and returns a modified image that are more visible for colorblind viewers. This API was made to serve as the backend for [See Colors](https://github.com/MelvinDinh3302/seecolors), my React Native front-end app, but it is open for anyone to use.
+[![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/en/stable/)
+
+**Daltonize API** is a public Flask-based service that processes images to generate colorblind-friendly versions. Originally built as the backend for my [See Colors](https://github.com/MelvinDinh3302/seecolors) React Native app, it's open and available for anyone to use.
 
 ## Run It on Your Local Machine
 
