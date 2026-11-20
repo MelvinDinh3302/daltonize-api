@@ -30,11 +30,14 @@
    ```bash
    curl -X POST -F "image=@<input>" -F "type=<type>" http://<your_host_ip>:5000/daltonize --output <output>
    ```
-   **Note:** `-F "type=<type>"` is optional. Default = `'d'` for deuteranopia, `'p'` for protanopia, `'t'` for tritanopia.
+   - `type` is optional. Use `p` for protan, `d` for deutan (the default), or `t` for tritan.
+   - `severity` is optional and accepts values from `0` to `1`. The default is `1`, the maximum filter setting. A value of `0` skips color correction and still returns a JPEG.
 
-   **Example:**
+For example, apply the deutan filter at severity `0.6`:
+
    ```bash
-   curl -X POST -F "image=@flower.jpg" -F "type=p" http://127.0.0.1:5000/daltonize --output result.jpg
+   curl -f -F "image=@test/flower.jpg" -F "type=d" -F "severity=0.6" \
+   http://127.0.0.1:5000/daltonize --output result.jpg
    ```
 
 ## Run It Online (Recommended)
@@ -66,4 +69,6 @@ Flower (Deuteranopia/Green-blind)
 | **Colorblind Vision** | ![Simulated](test/flower-sim.jpg) | ![Daltonized-Sim](test/flower-dal-sim.jpg) |
 
 ## Acknowledgments
-This API was built upon [Joerg Dietrich's original Daltonize library](https://github.com/joergdietrich/daltonize).
+This API was originally built on [Joerg Dietrich’s Daltonize library](https://github.com/joergdietrich/daltonize).
+
+The current version uses a Python port of Chromium’s ChromeOS color vision correction filter. The switch adds adjustable severity and uses a better correction matrix for protan, deutan, and tritan color vision deficiencies. [Chromium 138.0.7204.97 source](https://chromium.googlesource.com/chromium/src/+/refs/tags/138.0.7204.97/ash/color_enhancement/color_enhancement_controller.cc)
