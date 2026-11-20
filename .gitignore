@@ -1,1 +1,27 @@
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Python Bytecode & Caches
 __pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# Editor / OS Files
+.vscode/
+.idea/
+.DS_Store

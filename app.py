@@ -1,8 +1,7 @@
 from flask import Flask, request, send_file
 from PIL import Image
-import numpy as np
 import io
-from daltonize import daltonize, gamma_correction, array_to_img
+from chromium_daltonize import chromium_daltonize
 
 app = Flask(__name__)
 
@@ -15,13 +14,16 @@ def handle_image():
     if dalton_type not in ['p', 'd', 't']:
         return {"error": "Invalid type. Use 'p', 'd', or 't'."}, 400
 
-    image_file = request.files['image']
-    img = Image.open(image_file.stream).convert("RGB")
-    img_np = np.asarray(img, dtype=np.float16)
-    img_np = gamma_correction(img_np)
+    try:
+        severity = float(request.form.get("severity", "1"))
+    except ValueError:
+        return {"error": "Severity must be a number from 0 to 1."}, 400
+    if not 0 <= severity <= 1:
+        return {"error": "Severity must be a number from 0 to 1."}, 400
 
-    dalton_rgb = daltonize(img_np, dalton_type)
-    dalton_img = array_to_img(dalton_rgb)
+    image_file = request.files["image"]
+    img = Image.open(image_file.stream).convert("RGB")
+    dalton_img = chromium_daltonize(img, dalton_type, severity)
 
     img_io = io.BytesIO()
     dalton_img.save(img_io, 'JPEG')

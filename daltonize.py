@@ -1,9 +1,3 @@
-"""
-   Written by Joerg Dietrich <astro@joergdietrich.com>. Copyright 2015-2020
-   Based on original code by Oliver Siemoneit. Copyright 2007
-   This code is licensed under the GNU GPL version 2, see COPYING for details.
-"""
-
 from collections import OrderedDict
 import pickle
 from pkg_resources import parse_version
