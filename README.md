@@ -54,19 +54,20 @@ curl -X POST -F "image=@flower.jpg" -F "type=p" https://daltonize-api.up.railway
 ```
 
 ## Demonstration
+
 Ishihara Test (Protanopia/Red-blind)
 
-| Vision Type       | Original Image               | Daltonized Image               |
-|-------------------|------------------------------|--------------------------------|
-| **Normal Vision** | ![Original](test/ishihara.jpg) | ![Daltonized](test/ishihara-dal.jpg) |
-| **Colorblind Vision** | ![Simulated](test/ishihara-sim.jpg) | ![Daltonized-Sim](test/ishihara-dal-sim.jpg) |
+| Vision Type | Original Image | Daltonized Image |
+|---|---|---|
+| **Normal Vision** | <img src="test/ishihara.jpg" height="160" alt="Original Ishihara test"> | <img src="test/ishihara-dal.jpg" height="160" alt="Daltonized Ishihara test"> |
+| **Colorblind Vision** | <img src="test/ishihara-sim.jpg" height="160" alt="Original Ishihara test with protanopia simulated"> | <img src="test/ishihara-dal-sim.jpg" height="160" alt="Daltonized Ishihara test with protanopia simulated"> |
 
 Flower (Deuteranopia/Green-blind)
 
-| Vision Type       | Original Image               | Daltonized Image               |
-|-------------------|------------------------------|--------------------------------|
-| **Normal Vision** | ![Original](test/flower.jpg) | ![Daltonized](test/flower-dal.jpg) |
-| **Colorblind Vision** | ![Simulated](test/flower-sim.jpg) | ![Daltonized-Sim](test/flower-dal-sim.jpg) |
+| Vision Type | Original Image | Daltonized Image |
+|---|---|---|
+| **Normal Vision** | <img src="test/flower.jpg" height="160" alt="Original flower photo"> | <img src="test/flower-dal.jpg" height="160" alt="Daltonized flower photo"> |
+| **Colorblind Vision** | <img src="test/flower-sim.jpg" height="160" alt="Original flower photo with deuteranopia simulated"> | <img src="test/flower-dal-sim.jpg" height="160" alt="Daltonized flower photo with deuteranopia simulated"> |
 
 ## Acknowledgments
 This API was originally built on [Joerg Dietrich’s Daltonize library](https://github.com/joergdietrich/daltonize).
